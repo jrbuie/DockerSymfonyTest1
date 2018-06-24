@@ -1,0 +1,1 @@
+control-c, wait 2 sec, control-c, vagrant halt / vagrant reload
