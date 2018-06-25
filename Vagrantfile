@@ -4,7 +4,13 @@ ENV['VAGRANT_NO_PARALLEL'] = 'yes'
  
 Vagrant.configure("2") do |config|
 
-
+###########################################################################
+#	                                                                      #
+#					MySQL   										      #
+#																		  #
+#																		  #
+#																		  #
+###########################################################################	
   # config.vm.define "mysql-container",autostart: false  do |m|
   config.vm.define "mysql-container"  do |m|
  
@@ -31,7 +37,13 @@ Vagrant.configure("2") do |config|
  end
 
 
-
+###########################################################################
+#	                                                                      #
+#					PHP      										      #
+#																		  #
+#																		  #
+#																		  #
+###########################################################################	
  # config.vm.define "php-container" ,autostart: false do |m|
   config.vm.define "php-container" do |m|
 
@@ -50,14 +62,23 @@ Vagrant.configure("2") do |config|
 	d.link("mysql-container:db")
 	# d.volumes = ["/host_web/:/usr/local/apache2b/htdocs"] 
 	d.volumes = ["/host_web/:/var/www/html"] 
+	#d.volumes = ["$PWD:/app"]
     # d.create_args = ["--volumes-from=apache-alpine-container"]
+	#d.create_args = ["--rm", "--interactive", "--tty"]
+	#d.cmd = ["composer install"]
    end
  end
  
 
 
  
- 
+###########################################################################
+#	                                                                      #
+#					Apache  										      #
+#																		  #
+#																		  #
+#																		  #
+###########################################################################	
   # config.vm.define "apache-container",autostart: false  do |m|
   config.vm.define "apache-container"  do |m|
 
@@ -92,7 +113,13 @@ Vagrant.configure("2") do |config|
      end
     end
 
-	
+###########################################################################
+#	                                                                      #
+#					Adminer 										      #
+#																		  #
+#																		  #
+#																		  #
+###########################################################################		
 	  # config.vm.define "adminer-container",autostart: false  do |m|
 	  config.vm.define "adminer-container"  do |m|
  
@@ -123,6 +150,29 @@ Vagrant.configure("2") do |config|
 	
 	  # d.cmd = ["bash"]
       d.ports = ["8083:8080"]
+     end
+    end
+###########################################################################
+#	                                                                      #
+#					COMPOSER										      #
+#																		  #
+#																		  #
+#																		  #
+###########################################################################																		  
+		 
+    config.vm.define "composer-container"  do |m| 
+      m.vm.provider :docker  do |d|
+         #  NEXT LINE IS IMPORTANT to avoid docker not in PATH errors
+         d.force_host_vm = true
+         d.name = 'composer-container'
+         d.has_ssh = true
+         d.build_dir = "Docker/dockerfile_composer"
+         d.remains_running = true
+         d.vagrant_machine = "dockerhostvm6"
+         d.vagrant_vagrantfile = "Docker/DockerHostVagrantfile"
+	     d.volumes = ["/project_dir/:/app"]
+		 d.create_args = ["-d"]
+	     d.cmd = ["composer"]	  
      end
     end
 
