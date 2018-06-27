@@ -1,4 +1,6 @@
 .vagrant
 ubuntu-xenial*.log
 Docker/dockerfile_mysql/data_dir
+composer.cach2
+
 
