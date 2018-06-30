@@ -1,1 +1,3 @@
 control-c, wait 2 sec, control-c, vagrant halt / vagrant reload
+
+https://www.calebwoods.com/2015/05/05/vagrant-guest-commands/
