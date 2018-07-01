@@ -11,8 +11,8 @@ Vagrant.configure("2") do |config|
 #																		  #
 #																		  #
 ###########################################################################	
-  # config.vm.define "mysql-container",autostart: false  do |m|
-  config.vm.define "mysql-container"  do |m|
+   config.vm.define "mysql-container",autostart: false  do |m|
+  #config.vm.define "mysql-container"  do |m|
  
    m.vm.provider :docker do |d|
     
@@ -46,8 +46,8 @@ Vagrant.configure("2") do |config|
 #																		  #
 #																		  #
 ###########################################################################	
- # config.vm.define "php-container" ,autostart: false do |m|
-  config.vm.define "php-container" do |m|
+  config.vm.define "php-container" ,autostart: false do |m|
+  #config.vm.define "php-container" do |m|
 
  
    m.vm.provider :docker do |d|
@@ -81,8 +81,8 @@ Vagrant.configure("2") do |config|
 #																		  #
 #																		  #
 ###########################################################################	
-  # config.vm.define "apache-container",autostart: false  do |m|
-  config.vm.define "apache-container"  do |m|
+   config.vm.define "apache-container",autostart: false  do |m|
+  #config.vm.define "apache-container"  do |m|
 
  
      m.vm.provider :docker  do |d|
@@ -111,8 +111,8 @@ Vagrant.configure("2") do |config|
 #																		  #
 #																		  #
 ###########################################################################		
-	  # config.vm.define "adminer-container",autostart: false  do |m|
-	  config.vm.define "adminer-container"  do |m|
+	   config.vm.define "adminer-container",autostart: false  do |m|
+	  #config.vm.define "adminer-container"  do |m|
  
      m.vm.provider :docker  do |d|
       # d.volumes = ["/host_data/:/dock_host_data"] 
@@ -151,7 +151,7 @@ Vagrant.configure("2") do |config|
 #																		  #
 ###########################################################################																		  
 		 
-    config.vm.define "composer-container"  do |m| 
+    config.vm.define "composer-container", autostart: false  do |m| 
       m.vm.provider :docker  do |d|
          #  NEXT LINE IS IMPORTANT to avoid docker not in PATH errors
          d.force_host_vm = true
@@ -175,7 +175,7 @@ Vagrant.configure("2") do |config|
 #																		  #
 ###########################################################################																		  
 		 
-    config.vm.define "hello-world-container"  do |m| 
+    config.vm.define "hello-world-container", autostart: false  do |m| 
       m.vm.provider :docker  do |d|
          #  NEXT LINE IS IMPORTANT to avoid docker not in PATH errors
          d.force_host_vm = true
@@ -197,7 +197,7 @@ Vagrant.configure("2") do |config|
 #																		  #
 ###########################################################################																		  
 		 
-    config.vm.define "scratch-container"  do |m| 
+    config.vm.define "scratch-container", autostart: false  do |m| 
       m.vm.provider :docker  do |d|
          #  NEXT LINE IS IMPORTANT to avoid docker not in PATH errors
          d.force_host_vm = true
