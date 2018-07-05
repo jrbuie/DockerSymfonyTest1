@@ -63,7 +63,8 @@ Vagrant.configure("2") do |config|
 	################3
 	d.link("mysql-container:db")
 	# d.volumes = ["/host_web/:/usr/local/apache2b/htdocs"] 
-	d.volumes = ["/host_web/:/var/www/html"] 
+	d.volumes = ["/host_web/:/var/www/html/project"] 
+	#d.volumes = ["/host_web/:/usr/local/apache2/htdocs"] 
 	#d.volumes = ["$PWD:/app"]
     # d.create_args = ["--volumes-from=apache-alpine-container"]
 	#d.create_args = ["--rm", "--interactive", "--tty"]
@@ -162,6 +163,7 @@ Vagrant.configure("2") do |config|
          d.vagrant_machine = "dockerhostvm6"
          d.vagrant_vagrantfile = "Docker/DockerHostVagrantfile"
 	     d.volumes = ["/project_dir/:/app", "/project_dir/composer_cach/:/tmp"]
+
 		 # d.create_args = ["-d"]
 	     # d.cmd = ["composer"]	  
      end

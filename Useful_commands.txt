@@ -1,3 +1,12 @@
 control-c, wait 2 sec, control-c, vagrant halt / vagrant reload
 
 https://www.calebwoods.com/2015/05/05/vagrant-guest-commands/
+
+to list all users:
+cut -d: -f1 /etc/passwd
+
+list all groups:
+groups
+
+users in group:
+ grep 'grpup-name-here' /etc/group
