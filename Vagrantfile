@@ -63,7 +63,8 @@ Vagrant.configure("2") do |config|
 	################3
 	d.link("mysql-container:db")
 	# d.volumes = ["/host_web/:/usr/local/apache2b/htdocs"] 
-	d.volumes = ["/host_web/:/var/www/html/project"] 
+	#d.volumes = ["/host_web/:/var/www/html/project"] 
+	d.volumes = ["/project_dir/:/var/www/html/project"]
 	#d.volumes = ["/host_web/:/usr/local/apache2/htdocs"] 
 	#d.volumes = ["$PWD:/app"]
     # d.create_args = ["--volumes-from=apache-alpine-container"]
@@ -88,7 +89,9 @@ Vagrant.configure("2") do |config|
  
      m.vm.provider :docker  do |d|
       # d.volumes = ["/host_data/:/dock_host_data"] 
-	    d.volumes = ["/host_web/:/usr/local/apache2/htdocs"] 
+	  #  d.volumes = ["/host_web/:/usr/local/apache2/htdocs"] 
+	  d.volumes = ["/project_dir/:/usr/local/apache2/htdocs"] 
+	  
 	  #d.create_args = ["--volumes-from=php-container"]
 
 #  NEXT LINE IS IMPORTANT to avoid docker not in PATH errors
