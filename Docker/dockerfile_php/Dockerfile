@@ -2,6 +2,8 @@
  RUN mkdir /var/www/html/project
  WORKDIR /var/www/html/project
   #RUN docker-php-ext-install pdo pdo_mysql && docker-php-ext-enable pdo pdo_mysql
+  RUN docker-php-ext-install pdo pdo_mysql
+  #RUN docker-php-ext-enable pdo pdo_mysql
   
 
   
