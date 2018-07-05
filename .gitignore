@@ -1,6 +1,6 @@
 .vagrant
 ubuntu-xenial*.log
-Docker/dockerfile_mysql/data_dir
+
 composer.cach2
 ###> symfony/framework-bundle ###
 /.env
@@ -56,6 +56,12 @@ composer.cach2
 
 # Embedded web-server pid file
 /.web-server-pid
+
+#Keep data_dir but not its contents
+# exclude everything
+Docker/dockerfile_mysql/data_dir/*
+# exception to the rule
+!Docker/dockerfile_mysql/data_dir/.gitkeep 
 
 
 
