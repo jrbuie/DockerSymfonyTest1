@@ -6,6 +6,32 @@ Vagrant.configure("2") do |config|
 
 ###########################################################################
 #	                                                                      #
+#					DockerHostVM   										      #
+#																		  #
+#																		  #
+#																		  #
+###########################################################################	
+   config.vm.define "dockerhostvm-container"  do |m|
+ 
+   m.vm.provider :docker do |d|
+    
+   
+    d.build_dir = "Docker/dockerfile_dockerhostvm"
+#  NEXT LINE IS IMPORTANT to avoid docker not in PATH errors
+    d.force_host_vm = true
+    d.has_ssh = true
+    d.name = 'dockerhostvm-container'
+    d.vagrant_machine = "dockerhostvm6"
+    d.vagrant_vagrantfile = "Docker/DockerHostVagrantfile"
+    d.remains_running = false
+
+   end
+ end
+
+
+
+###########################################################################
+#	                                                                      #
 #					MySQL   										      #
 #																		  #
 #																		  #
