@@ -8,6 +8,8 @@
 
    RUN mkdir /var/log/apache2
    
+   RUN mkdir /var/log/apache2
+   
    #COPY /files/apache2_setup  /etc/services.d/apache/run
    #RUN addgroup -S johnb && adduser -S -G johnb johnb
 #  try to see logs:https://github.com/smebberson/docker-alpine/tree/master/alpine-apache

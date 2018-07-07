@@ -25,6 +25,9 @@ composer.cach2
 !var/logs/.gitkeep
 !var/sessions/.gitkeep
 
+#Cache (Symfony4)
+
+
 # Parameters
 /app/config/parameters.yml
 /app/config/parameters.ini
