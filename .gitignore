@@ -25,17 +25,11 @@ composer.cach2
 !var/logs/.gitkeep
 !var/sessions/.gitkeep
 
+#Cache (Symfony4)
+
+
 # Parameters
 /app/config/parameters.yml
-
-#From suggestions at https://github.com/github/gitignore/blob/master/Composer.gitignore
-composer.phar
-/vendor/
-
-# Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
-# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
-# composer.lock
-
 /app/config/parameters.ini
 
 # Managed by Composer
@@ -65,22 +59,6 @@ composer.phar
 
 # Embedded web-server pid file
 /.web-server-pid
-
-#Keep data_dir but not its contents
-# exclude everything
-Docker/dockerfile_mysql/data_dir/*
-# exception to the rule
-!Docker/dockerfile_mysql/data_dir/.gitkeep 
-
-#Keep public dir but not its contents
-# exclude everything
-my-project/public/*
-# exception to the rule
-!my-project/public/.gitkeep `
-
-
-*.tar
-*.gz
 
 
 
