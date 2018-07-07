@@ -66,5 +66,21 @@ composer.phar
 # Embedded web-server pid file
 /.web-server-pid
 
+#Keep data_dir but not its contents
+# exclude everything
+Docker/dockerfile_mysql/data_dir/*
+# exception to the rule
+!Docker/dockerfile_mysql/data_dir/.gitkeep 
+
+#Keep public dir but not its contents
+# exclude everything
+my-project/public/*
+# exception to the rule
+!my-project/public/.gitkeep `
+
+
+*.tar
+*.gz
+
 
 
